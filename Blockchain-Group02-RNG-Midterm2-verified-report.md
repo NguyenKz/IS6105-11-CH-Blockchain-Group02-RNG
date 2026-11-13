@@ -148,7 +148,7 @@ Transaction fee lấy từ local receipt và được gắn nhãn `REPLAYED`. Bi
 
 Manifest của batch cho biết 100 successful contexts, 0 failed contexts, 2.400 observations, 600 invariant rows, 600 strategy traces, 2.500 receipts, 2.500 traces và 2.500 event rows. Validation theo `bsc_rng_mev_replay.schema.json` đạt `PASS` với 2.400 observations.
 
-![Dataset coverage và run summary.](../main_direction/reports/figures/01_dataset_coverage.png)
+![Dataset coverage và run summary.](code/reports/figures/01_dataset_coverage.png)
 
 ## 4.2 Baseline và preliminary public-informed results
 
@@ -163,9 +163,9 @@ Manifest của batch cho biết 100 successful contexts, 0 failed contexts, 2.40
 
 Trên Fomo3D-inspired adapter, builder reorder và selective inclusion thay đổi winner trong các pair đã chạy nhưng point estimate không đủ để xác nhận lợi thế ổn định vì interval chứa 0. Searcher-only không thay đổi decoded winner. Trên Dice2Win-inspired adapter, commit-before-entropy giữ nguyên mapping winner trước và sau replay.
 
-![Capability matrix.](../main_direction/reports/figures/02_capability_matrix.png)
+![Capability matrix.](code/reports/figures/02_capability_matrix.png)
 
-![Paired delta và khoảng bất định.](../main_direction/reports/figures/03_paired_delta_ci.png)
+![Paired delta và khoảng bất định.](code/reports/figures/03_paired_delta_ci.png)
 
 ## 4.3 Economic sensitivity
 
@@ -180,13 +180,13 @@ Với Fomo3D-inspired builder reorder, `delta_p_win = 0,080` được dùng như
 
 Nếu delta thực sự không dương thì không có break-even prize hữu hạn theo công thức này. Vì interval của delta chứa 0, bảng chỉ là sensitivity theo giả định chi phí.
 
-![Net profit sensitivity.](../main_direction/reports/figures/04_net_profit_sensitivity.png)
+![Net profit sensitivity.](code/reports/figures/04_net_profit_sensitivity.png)
 
 ## 4.4 Weak versus safe reference
 
 Commit-before-entropy adapter cho `delta_p_win = 0` dưới các capability đã chạy. Điều này phù hợp với cơ chế: participant index được khóa trong commit phase trước khi entropy được finalize, nên reorder ở play phase không đổi mapping. Kết luận chỉ áp dụng cho synthetic adapter; deployed Dice2Win linkage là `RULE_UNCONFIRMED`.
 
-![Weak RNG versus safe reference.](../main_direction/reports/figures/05_weak_vs_safe.png)
+![Weak RNG versus safe reference.](code/reports/figures/05_weak_vs_safe.png)
 
 # 5. Comparison and Answers to RQ
 
@@ -197,7 +197,7 @@ Commit-before-entropy adapter cho `delta_p_win = 0` dưới các capability đã
 | RQ-C3 | Có thể tính break-even sensitivity khi dùng point estimate dương. | Fee replayed; bid và opportunity cost modeled; không chứng minh profitability. |
 | RQ-C4 | Commit-before-entropy giữ `delta_p_win = 0` trong adapter. | Deployed linkage chưa confirmed; không suy rộng sang mọi protocol. |
 
-![Summary comparison.](../main_direction/reports/figures/02_capability_matrix.png)
+![Summary comparison.](code/reports/figures/02_capability_matrix.png)
 
 ## Interpretation
 
@@ -218,20 +218,20 @@ Kết quả phân biệt hai điều thường bị trộn lẫn: capability có
 
 Các artifact chính:
 
-- `main_direction/data/derived/public_informed_synthetic/observations.jsonl`
-- `main_direction/data/manifests/public_informed_synthetic_manifest.json`
-- `main_direction/data/derived/public_informed_synthetic/validation_output.json`
-- `main_direction/scripts/replay/run_public_informed.py`
-- `main_direction/scripts/replay/validate_result.py`
-- `main_direction/scripts/replay/test_public_informed.py`
-- `main_direction/analysis/step_11_analysis.py`
-- `main_direction/analysis/step_11_results.ipynb`
-- `main_direction/reports/results_by_rq.md`
-- `main_direction/reports/tables/`
-- `main_direction/reports/figures/`
-- `main_direction/repro_check_public_informed_results.zip`
+- `code/data/derived/public_informed_synthetic/observations.jsonl`
+- `code/data/manifests/public_informed_synthetic_manifest.json`
+- `code/data/derived/public_informed_synthetic/validation_output.json`
+- `code/scripts/replay/run_public_informed.py`
+- `code/scripts/replay/validate_result.py`
+- `code/scripts/replay/test_public_informed.py`
+- `code/analysis/step_11_analysis.py`
+- `code/analysis/step_11_results.ipynb`
+- `code/reports/results_by_rq.md`
+- `code/reports/tables/`
+- `code/reports/figures/`
+- `code/repro_check_public_informed_results.zip`
 
-Lệnh validation từ `main_direction/`:
+Lệnh validation từ `code/`:
 
 ```bash
 source ../../venv/bin/activate

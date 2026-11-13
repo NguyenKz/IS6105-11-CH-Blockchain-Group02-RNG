@@ -27,7 +27,7 @@ Mọi lệnh Python phải chạy trong virtualenv hiện có:
 
 Nếu chưa có file cấu hình local, tạo từ template trước khi chạy crawl hoặc replay:
 
-    cd final_project/main_direction
+    cd final_project/code
     cp -n .env.example .env
 
 Sau đó điền `PINAX_API_KEY` trong `.env`. `PINAX_RPC_BASE_URL` là tùy chọn;
@@ -44,7 +44,7 @@ Không commit `.env` và không đưa API key vào artifact, report hoặc log.
 Docker là cách dễ nhất cho thành viên chưa có Python, Foundry hoặc Anvil. Cần
 cài Docker Desktop, sau đó chạy từ thư mục này:
 
-    cd final_project/main_direction
+    cd final_project/code
     cp -n .env.example .env
 
 Mở `.env`, điền `PINAX_API_KEY`, rồi build image:

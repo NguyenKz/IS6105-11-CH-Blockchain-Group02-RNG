@@ -1,0 +1,5 @@
+cost_model_id,transaction_fee_source,explicit_bid_or_bribe_wei,opportunity_cost_rule,evidence_label,allowed_use
+FEE_ONLY,attacker receipt gasUsed multiplied by effectiveGasPrice,0,0,REPLAYED;MODELED,technical pilot only
+OPPORTUNITY_LOW,attacker receipt gasUsed multiplied by effectiveGasPrice,0,one attacker transaction fee,REPLAYED;MODELED,sensitivity only
+OPPORTUNITY_BASE,attacker receipt gasUsed multiplied by effectiveGasPrice,0,two attacker transaction fees,REPLAYED;MODELED,sensitivity only
+OPPORTUNITY_HIGH,attacker receipt gasUsed multiplied by effectiveGasPrice,0,four attacker transaction fees,REPLAYED;MODELED,sensitivity only

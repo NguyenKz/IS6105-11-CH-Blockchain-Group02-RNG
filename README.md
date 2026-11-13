@@ -12,7 +12,7 @@ personal working files, or the previous DOCX submission.
 
 - `Blockchain-Group02-RNG-Midterm2-verified-report.pdf` — final report.
 - `Blockchain-Group02-RNG-Midterm2-verified-report.md` — report source.
-- `main_direction/` — minimal code, fixtures, schema, analysis, reports,
+- `code/` — minimal code, fixtures, schema, analysis, reports,
   tables, figures, manifests, and verified replay logs.
 
 The verified batch contains 100 BSC contexts, 2,400 observations, six
@@ -25,14 +25,35 @@ The 1,000-context confirmatory holdout, participant robustness 2/5/10 runs,
 slide deck, and speaker script are not included because those artifacts were
 not present in the verified workspace.
 
+## Kế hoạch nghiên cứu từng bước
+
+| Step | Nội dung | Tài liệu |
+|---:|---|---|
+| 1 | Bản đồ nghiên cứu | [Step 1](code/step_1_research_map.md) |
+| 2 | Khóa phạm vi và claims | [Step 2](code/step_2_lock_scope_and_claims.md) |
+| 3 | Khảo sát nghiên cứu liên quan | [Step 3](code/step_3_review_related_work.md) |
+| 4 | Xác định threat model | [Step 4](code/step_4_define_threat_model.md) |
+| 5 | Đặc tả thí nghiệm và dataset | [Step 5](code/step_5_specify_experiment.md) |
+| 6 | Thu thập block context từ BSC | [Step 6](code/step_6_crawl_bsc_contexts.md) |
+| 7 | Xây replay harness | [Step 7](code/step_7_build_replay_harness.md) |
+| 8 | Cài đặt attack strategies | [Step 8](code/step_8_implement_attack_strategies.md) |
+| 9 | Chạy pilot và quyết định go/no-go | [Step 9](code/step_9_run_pilot.md) |
+| 10 | Chạy public-informed synthetic evaluation | [Step 10](code/step_10_collect_full_dataset.md) |
+| 11 | Phân tích kết quả | [Step 11](code/step_11_analyze_results.md) |
+| 12 | Viết báo cáo và đóng gói artifact | [Step 12](code/step_12_write_report_and_release.md) |
+
+Các file step là research plan và provenance của quy trình, không biến các run
+chưa thực hiện thành kết quả. Confirmatory holdout 1.000 contexts và
+participant robustness 2/5/10 vẫn là kế hoạch/future work.
+
 ## Reproduce and validate
 
-The commands below run from `main_direction/`. Install the project dependencies
+The commands below run from `code/`. Install the project dependencies
 and Foundry/Anvil locally first, or adapt them to the Docker setup used by the
 original workspace.
 
 ```bash
-cd main_direction
+cd code
 python scripts/replay/test_public_informed.py
 python scripts/replay/validate_result.py \
   --self-test \
