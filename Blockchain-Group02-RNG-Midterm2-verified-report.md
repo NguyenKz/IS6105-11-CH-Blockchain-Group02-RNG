@@ -204,20 +204,20 @@ Kết quả phân biệt hai điều thường bị trộn lẫn: capability có
 
 Các artifact chính:
 
-- `main_direction/data/derived/public_informed_synthetic/observations.jsonl`
-- `main_direction/data/manifests/public_informed_synthetic_manifest.json`
-- `main_direction/data/derived/public_informed_synthetic/validation_output.json`
-- `main_direction/scripts/replay/run_public_informed.py`
-- `main_direction/scripts/replay/validate_result.py`
-- `main_direction/scripts/replay/test_public_informed.py`
-- `main_direction/analysis/step_11_analysis.py`
-- `main_direction/analysis/step_11_results.ipynb`
-- `main_direction/reports/results_by_rq.md`
-- `main_direction/reports/tables/`
-- `main_direction/reports/figures/`
-- `main_direction/repro_check_public_informed_results.zip`
+- `code/data/derived/public_informed_synthetic/observations.jsonl`
+- `code/data/manifests/public_informed_synthetic_manifest.json`
+- `code/data/derived/public_informed_synthetic/validation_output.json`
+- `code/scripts/replay/run_public_informed.py`
+- `code/scripts/replay/validate_result.py`
+- `code/scripts/replay/test_public_informed.py`
+- `code/analysis/step_11_analysis.py`
+- `code/analysis/step_11_results.ipynb`
+- `code/reports/results_by_rq.md`
+- `code/reports/tables/`
+- `code/reports/figures/`
+- `code/repro_check_public_informed_results.zip`
 
-Lệnh validation từ `main_direction/`:
+Lệnh validation từ `code/`:
 
 ```bash
 source ../../venv/bin/activate
