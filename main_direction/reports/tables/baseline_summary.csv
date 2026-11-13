@@ -1,0 +1,7 @@
+dataset,family_id,family_label,capability,total_pairs,valid_pairs,failed_pairs,validity_rate,canonical_wins,manipulated_wins,canonical_win_rate,manipulated_win_rate,delta_p_win,ci_95_low,ci_95_high,winner_change_rate,liveness_status,loss_to_win,win_to_loss,unchanged_win,unchanged_loss
+VERY_SIMPLE_RULES,COMMIT_BEFORE_ENTROPY,Very simple safe reference,BUILDER_REORDER,100,100,0,1.0,48,48,0.48,0.48,0.0,0.0,0.0,0.0,NOT_APPLICABLE,0,0,48,52
+VERY_SIMPLE_RULES,COMMIT_BEFORE_ENTROPY,Very simple safe reference,BUILDER_SELECTIVE_INCLUSION,100,100,0,1.0,48,48,0.48,0.48,0.0,0.0,0.0,0.0,NOT_CHECKED,0,0,48,52
+VERY_SIMPLE_RULES,COMMIT_BEFORE_ENTROPY,Very simple safe reference,SEARCHER_ONLY,100,100,0,1.0,48,48,0.48,0.48,0.0,0.0,0.0,0.0,NOT_APPLICABLE,0,0,48,52
+VERY_SIMPLE_RULES,WEAK_PUBLIC_CONTEXT,Very simple weak rule,BUILDER_REORDER,100,100,0,1.0,48,48,0.48,0.48,0.0,0.0,0.0,0.0,NOT_APPLICABLE,0,0,48,52
+VERY_SIMPLE_RULES,WEAK_PUBLIC_CONTEXT,Very simple weak rule,BUILDER_SELECTIVE_INCLUSION,100,100,0,1.0,48,52,0.48,0.52,0.04,-0.16,0.24,1.0,NOT_CHECKED,52,48,0,0
+VERY_SIMPLE_RULES,WEAK_PUBLIC_CONTEXT,Very simple weak rule,SEARCHER_ONLY,100,100,0,1.0,48,48,0.48,0.48,0.0,0.0,0.0,0.0,NOT_APPLICABLE,0,0,48,52

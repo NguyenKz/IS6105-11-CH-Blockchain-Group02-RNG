@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bsc-rng-mev-replay.schema.json",
+  "title": "BSC RNG MEV Replay Observation",
+  "description": "One paired replay observation. This schema does not assert that a historical attack occurred.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "context_id": {"type": "string", "pattern": "^bsc-mainnet:0x[0-9a-fA-F]{64}$"},
+    "scenario_id": {"type": "string", "enum": ["SC-001", "SC-002", "SC-003", "SC-004", "SC-005", "SC-006"]},
+    "seed": {"type": "string", "pattern": "^[0-9]+$"},
+    "source_rpc_id": {"type": "string", "minLength": 1},
+    "chain_id": {"type": "integer", "const": 56},
+    "source_block_number": {"type": "integer", "minimum": 0},
+    "source_block_hash": {"$ref": "#/$defs/hash"},
+    "parent_hash": {"$ref": "#/$defs/hash"},
+    "pre_state_block": {"type": "integer", "minimum": 0},
+    "code_commit": {"type": "string", "pattern": "^[0-9a-fA-F]{7,64}$"},
+    "cost_model_id": {"type": "string", "minLength": 1},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "block_timestamp": {"type": "integer", "minimum": 0},
+    "gas_limit": {"type": "integer", "minimum": 0},
+    "gas_used_block": {"type": "integer", "minimum": 0},
+    "tx_count": {"type": "integer", "minimum": 0},
+    "rng_pattern": {"type": "string", "enum": ["WEAK_PUBLIC_CONTEXT", "WEAK_ORDER_DEPENDENT", "WEAK_BUILDER_CONTEXT", "COMMIT_BEFORE_ENTROPY", "VRF"]},
+    "actor_model": {"type": "string", "enum": ["SEARCHER", "BUILDER"]},
+    "visibility_model": {"type": "string", "enum": ["PUBLIC_ONLY", "BUILDER_RECEIVED"]},
+    "capability": {"type": "string", "enum": ["SEARCHER_ONLY", "BUILDER_REORDER", "BUILDER_SELECTIVE_INCLUSION"]},
+    "ordering_strategy": {"type": "string", "enum": ["CANONICAL", "SEARCHER_TIMING", "BUILDER_REORDER", "BUILDER_SELECTIVE_INCLUSION"]},
+    "selective_inclusion": {"type": "boolean"},
+    "strategy_id": {"type": "string", "minLength": 1},
+    "rule_family_id": {"type": "string", "minLength": 1},
+    "rule_mapping_id": {"type": "string", "minLength": 1},
+    "rule_provenance_status": {"type": "string", "enum": ["CONFIRMED", "RULE_UNCONFIRMED"]},
+    "attacker_tx": {"type": ["string", "null"]},
+    "received_set": {"type": ["array", "null"], "items": {"type": "string"}},
+    "canonical_order": {"type": ["array", "null"], "items": {"type": "string"}},
+    "selected_order": {"type": ["array", "null"], "items": {"type": "string"}},
+    "excluded_transactions": {"type": ["array", "null"], "items": {"type": "string"}},
+    "validity_checks": {"type": ["object", "null"], "additionalProperties": {"type": "boolean"}},
+    "canonical_outcome": {"type": ["string", "object", "null"]},
+    "manipulated_outcome": {"type": ["string", "object", "null"]},
+    "canonical_win": {"type": ["boolean", "null"]},
+    "manipulated_win": {"type": ["boolean", "null"]},
+    "prize_wei": {"$ref": "#/$defs/weiOrNull"},
+    "attacker_tx_cost_wei": {"$ref": "#/$defs/weiOrNull"},
+    "explicit_bid_or_bribe_wei": {"$ref": "#/$defs/weiOrNull"},
+    "opportunity_cost_wei": {"$ref": "#/$defs/weiOrNull"},
+    "net_profit_wei": {"$ref": "#/$defs/weiOrNull"},
+    "safe_reference": {"type": "string", "enum": ["COMMIT_BEFORE_ENTROPY", "VRF"]},
+    "safe_reference_outcome": {"type": ["string", "object", "null"]},
+    "safe_reference_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "commitments_before_entropy": {"type": "boolean"},
+        "entropy_unavailable_before_final_commit": {"type": "boolean"},
+        "commitment_immutability": {"type": "boolean"},
+        "same_participant_set": {"type": "boolean"},
+        "same_payoff_rule": {"type": "boolean"}
+      },
+      "required": [
+        "commitments_before_entropy",
+        "entropy_unavailable_before_final_commit",
+        "commitment_immutability",
+        "same_participant_set",
+        "same_payoff_rule"
+      ]
+    },
+    "replay_success": {"type": "boolean"},
+    "failure_reason": {"type": ["string", "null"]},
+    "evidence_label_source_context": {"$ref": "#/$defs/evidenceLabel"},
+    "evidence_label_replay": {"$ref": "#/$defs/evidenceLabel"},
+    "evidence_label_tx_cost": {"$ref": "#/$defs/evidenceLabel"},
+    "evidence_label_bid": {"$ref": "#/$defs/evidenceLabel"},
+    "evidence_label_opportunity_cost": {"$ref": "#/$defs/evidenceLabel"},
+    "evidence_label_derived": {"$ref": "#/$defs/evidenceLabel"}
+  },
+  "required": [
+    "schema_version", "run_id", "context_id", "scenario_id", "seed",
+    "source_rpc_id", "chain_id", "source_block_number", "source_block_hash",
+    "parent_hash", "pre_state_block", "code_commit", "cost_model_id",
+    "created_at_utc", "block_timestamp", "gas_limit", "gas_used_block",
+    "tx_count", "rng_pattern", "actor_model", "visibility_model",
+    "capability", "ordering_strategy", "selective_inclusion", "strategy_id",
+    "attacker_tx", "received_set", "canonical_order", "selected_order",
+    "excluded_transactions", "validity_checks", "canonical_outcome",
+    "manipulated_outcome", "canonical_win", "manipulated_win", "prize_wei",
+    "attacker_tx_cost_wei", "explicit_bid_or_bribe_wei",
+    "opportunity_cost_wei", "net_profit_wei", "safe_reference",
+    "safe_reference_outcome", "replay_success", "failure_reason",
+    "evidence_label_source_context", "evidence_label_replay",
+    "evidence_label_tx_cost", "evidence_label_bid",
+    "evidence_label_opportunity_cost", "evidence_label_derived"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {"replay_success": {"const": false}},
+        "required": ["replay_success"]
+      },
+      "then": {
+        "required": ["failure_reason"],
+        "properties": {"failure_reason": {"type": "string", "minLength": 1}}
+      }
+    }
+  ],
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^0x[0-9a-fA-F]{64}$"},
+    "weiOrNull": {"type": ["string", "null"], "pattern": "^-?[0-9]+$"},
+    "evidenceLabel": {"type": "string", "enum": ["OBSERVED", "REPLAYED", "MODELED", "DERIVED"]}
+  }
+}

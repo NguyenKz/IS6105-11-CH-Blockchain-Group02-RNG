@@ -1,0 +1,30 @@
+[
+  {
+    "type": "function",
+    "name": "buyXid",
+    "stateMutability": "payable",
+    "inputs": [
+      {"name": "_affCode", "type": "uint256"},
+      {"name": "_team", "type": "uint256"}
+    ],
+    "outputs": []
+  },
+  {
+    "type": "event",
+    "name": "onBuyAndDistribute",
+    "anonymous": false,
+    "inputs": [
+      {"indexed": false, "name": "playerAddress", "type": "address"},
+      {"indexed": false, "name": "playerName", "type": "bytes32"},
+      {"indexed": false, "name": "ethIn", "type": "uint256"},
+      {"indexed": false, "name": "compressedData", "type": "uint256"},
+      {"indexed": false, "name": "compressedIDs", "type": "uint256"},
+      {"indexed": false, "name": "winnerAddr", "type": "address"},
+      {"indexed": false, "name": "winnerName", "type": "bytes32"},
+      {"indexed": false, "name": "amountWon", "type": "uint256"},
+      {"indexed": false, "name": "newPot", "type": "uint256"},
+      {"indexed": false, "name": "P3DAmount", "type": "uint256"},
+      {"indexed": false, "name": "genAmount", "type": "uint256"}
+    ]
+  }
+]

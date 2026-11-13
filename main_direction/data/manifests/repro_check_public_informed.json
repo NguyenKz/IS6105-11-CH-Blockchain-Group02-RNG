@@ -1,0 +1,41 @@
+{
+  "authenticated_url_recorded": false,
+  "code_fingerprint": "c331a5643fa614d011b59512044631e78467485a0d60a9f5b3d3051b39db9bf4",
+  "context_count": 100,
+  "cost_models": [
+    "FEE_ONLY",
+    "OPPORTUNITY_LOW",
+    "OPPORTUNITY_BASE",
+    "OPPORTUNITY_HIGH"
+  ],
+  "event_rows": 2500,
+  "execution": "4 isolated local Anvil workers; no mainnet transaction submission",
+  "failed_contexts": 0,
+  "failure_reasons": [],
+  "invariant_rows": 600,
+  "observation_rows": 2400,
+  "provenance_manifest": "data/public_rule_evidence/manifest.json",
+  "receipt_rows": 2500,
+  "rule_families": [
+    {
+      "contract": "Fomo3dInspiredGame",
+      "rule_family_id": "FOMO3D_PUBLIC_CONTEXT_HASH_MODULO",
+      "rule_mapping_id": "MAP-FOMO3D-PUBLIC-CONTEXT",
+      "rule_provenance_status": "CONFIRMED"
+    },
+    {
+      "contract": "Dice2WinInspiredGame",
+      "rule_family_id": "DICE2WIN_COMMIT_BLOCKHASH",
+      "rule_mapping_id": "MAP-DICE2WIN-COMMIT-BLOCKHASH",
+      "rule_provenance_status": "RULE_UNCONFIRMED"
+    }
+  ],
+  "runtime_seconds": 345.7,
+  "sampling_seed": "1",
+  "scenario_execution_count": 600,
+  "schema_version": "1.0",
+  "source_rpc_id": "pinax-bsc-rpc",
+  "strategy_trace_rows": 600,
+  "successful_contexts": 100,
+  "trace_rows": 2500
+}

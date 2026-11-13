@@ -1,0 +1,16 @@
+{
+  "project_id": "DICE2WIN_V5",
+  "project_name": "Dice2Win v5",
+  "status": "RULE_UNCONFIRMED",
+  "source_url": "https://github.com/dice2-win/contracts/blob/b0a0412f0301623dc3af2743dcace8e86cc6036b/Dice2Win.sol",
+  "code_hash": "sha256:775b1fb819998e20838621f8fc4951c64c266d2967f8d1743bca0f68ac2bf49a",
+  "rule_family": "COMMIT_BLOCKHASH",
+  "evidence": {
+    "code_or_bytecode": "Official repository commit b0a0412f0301623dc3af2743dcace8e86cc6036b; Dice2Win.sol sha256 775b1fb819998e20838621f8fc4951c64c266d2967f8d1743bca0f68ac2bf49a. Latest-state RPC returned empty runtime code for the source-declared address, so historical runtime linkage remains unconfirmed.",
+    "abi_calldata": "abi_fragment.json records placeBet, settleBet, Commit and Payment signatures from the official source.",
+    "randomness": "settleBet verifies keccak256(reveal) as the commit and the place block hash; settleBetCommon uses keccak256(reveal, entropyBlockHash) modulo the game modulo.",
+    "payoff": "The official source computes diceWinAmount from amount, modulo and rollUnder and emits Payment or FailedPayment.",
+    "events_traces_storage": "Commit records the bet identifier and Payment records payout. No archived runtime trace was available in this collection pass."
+  },
+  "notes": "The rule is source-confirmed, but the strict catalog status stays RULE_UNCONFIRMED because historical deployed bytecode was not independently retrieved."
+}

@@ -1,0 +1,5 @@
+[
+  {"type": "function", "name": "closeLottery", "stateMutability": "nonpayable", "inputs": [{"name": "_lotteryId", "type": "uint256"}], "outputs": []},
+  {"type": "function", "name": "drawFinalNumberAndMakeLotteryClaimable", "stateMutability": "nonpayable", "inputs": [{"name": "_lotteryId", "type": "uint256"}, {"name": "_autoInjection", "type": "bool"}], "outputs": []},
+  {"type": "event", "name": "LotteryNumberDrawn", "anonymous": false, "inputs": [{"indexed": true, "name": "lotteryId", "type": "uint256"}, {"indexed": false, "name": "finalNumber", "type": "uint256"}, {"indexed": false, "name": "countWinningTickets", "type": "uint256"}]}
+]

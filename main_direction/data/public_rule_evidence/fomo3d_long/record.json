@@ -1,0 +1,16 @@
+{
+  "project_id": "FOMO3D_LONG",
+  "project_name": "Fomo3D Long",
+  "status": "CONFIRMED",
+  "source_url": "https://etherscan.io/address/0xA62142888ABa8370742bE823c1782D17A0389Da1",
+  "code_hash": "0xe588f83d8349f89ec605d5a725f2a693158a8c7eb82b3dec0478465a3b4aeaba",
+  "rule_family": "PUBLIC_CONTEXT_HASH_MODULO",
+  "evidence": {
+    "code_or_bytecode": "Ethereum latest-state runtime bytecode: 21488 bytes; keccak256 0xe588f83d8349f89ec605d5a725f2a693158a8c7eb82b3dec0478465a3b4aeaba. Source mirror commit 5f12c71fe4e9c92142bb0021e0e0da983daf9ceb; FoMo3Dlong.sol sha256 d626428ad003ef937081d95d77722759fe2b742316f19da70e93a2d445f2698e.",
+    "abi_calldata": "abi_fragment.json records buyXid(uint256,uint256) and onBuyAndDistribute evidence relevant to the private airdrop call path.",
+    "randomness": "FoMo3Dlong.sol lines 1409-1432 hash block.timestamp, block.difficulty, block.coinbase, block.gaslimit, msg.sender and block.number, then compare seed modulo 1000 with airDropTracker_.",
+    "payoff": "The buy path pays an airdrop share when airdrop() returns true; the synthetic adapter keeps only a fixed prize and winner decision.",
+    "events_traces_storage": "Verified contract address and runtime bytecode were observed read-only; no historical attack is inferred."
+  },
+  "notes": "The GitHub repository is a source mirror, so the explorer address and observed runtime code are retained as separate evidence."
+}

@@ -1,0 +1,16 @@
+{
+  "project_id": "PANCAKESWAP_LOTTERY_V2",
+  "project_name": "PancakeSwap Lottery v2",
+  "status": "CONFIRMED",
+  "source_url": "https://bscscan.com/address/0x5af6d33de2ccec94efb1bdf8f92bd58085432d2c",
+  "code_hash": "0x162b6e63cc0f75d55e6cd1d80c9325385a43896a031c910673377f13fa179bba",
+  "rule_family": "EXTERNAL_VERIFIABLE_ENTROPY",
+  "evidence": {
+    "code_or_bytecode": "BNB Smart Chain latest-state runtime bytecode: 20240 bytes; keccak256 0x162b6e63cc0f75d55e6cd1d80c9325385a43896a031c910673377f13fa179bba. Official archived lottery repository commit d2ebe90700f842bd62280e0ecc7bb95c2475f2c4 documents the VRF request/callback pattern.",
+    "abi_calldata": "abi_fragment.json records closeLottery, drawFinalNumberAndMakeLotteryClaimable and LotteryNumberDrawn from the verified v2 contract ABI.",
+    "randomness": "Official documentation states Lottery uses Chainlink VRF. The archived official implementation requests randomness and accepts the result only through the random-generator callback.",
+    "payoff": "LotteryNumberDrawn records finalNumber and winning-ticket count; ticket claims distribute CAKE according to matching brackets.",
+    "events_traces_storage": "BscScan labels the deployed contract and exposes LotteryClose, LotteryNumberDrawn, TicketsPurchase and TicketsClaim events. Example VRF request transaction: 0x717fc63d364c0b5e75d40ba13712abc08ec9c6c5ba7d0762703523cbfdcceafd."
+  },
+  "notes": "Catalog-only safe reference. No local VRF mock is treated as real VRF evidence."
+}

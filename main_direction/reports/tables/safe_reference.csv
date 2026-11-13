@@ -1,0 +1,4 @@
+capability,paired_contexts,weak_delta_p_win,safe_delta_p_win,delta_reduction,ci_95_low,ci_95_high,safe_provenance_status
+BUILDER_REORDER,100,0.08,0.0,0.08,-0.12,0.28,RULE_UNCONFIRMED
+BUILDER_SELECTIVE_INCLUSION,100,0.08,0.0,0.08,-0.12,0.28,RULE_UNCONFIRMED
+SEARCHER_ONLY,100,0.0,0.0,0.0,0.0,0.0,RULE_UNCONFIRMED

@@ -1,0 +1,3 @@
+dataset,observation_rows,scenario_executions,contexts,failed_contexts,invariant_rows
+VERY_SIMPLE_RULES baseline,2400,600,100,0,0
+Public-informed synthetic,2400,600,100,0,600

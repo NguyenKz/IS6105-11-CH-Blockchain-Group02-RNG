@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/is6105/rule-provenance.schema.json",
+  "title": "Public rule provenance record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "project_name",
+    "status",
+    "source_url",
+    "evidence"
+  ],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "project_name": {"type": "string", "minLength": 1},
+    "status": {
+      "type": "string",
+      "enum": ["CONFIRMED", "RULE_UNCONFIRMED", "EXCLUDED", "PENDING"]
+    },
+    "source_url": {"type": "string", "format": "uri"},
+    "code_hash": {"type": ["string", "null"]},
+    "rule_family": {"type": ["string", "null"]},
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code_or_bytecode", "randomness", "payoff"],
+      "properties": {
+        "code_or_bytecode": {"type": "string", "minLength": 1},
+        "abi_calldata": {"type": ["string", "null"]},
+        "randomness": {"type": "string", "minLength": 1},
+        "payoff": {"type": "string", "minLength": 1},
+        "events_traces_storage": {"type": ["string", "null"]}
+      }
+    },
+    "notes": {"type": ["string", "null"]}
+  }
+}
+

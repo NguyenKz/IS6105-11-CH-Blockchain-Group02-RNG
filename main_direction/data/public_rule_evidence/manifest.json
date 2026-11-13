@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "status": "COMPLETE",
+  "checked_at_utc": "2026-10-10T03:33:06Z",
+  "candidate_count": 3,
+  "target_project_count_min": 3,
+  "target_project_count_max": 3,
+  "target_rule_family_count_min": 1,
+  "target_rule_family_count_max": 2,
+  "confirmed_rule_count": 2,
+  "rule_unconfirmed_count": 1,
+  "excluded_candidate_count": 0,
+  "implemented_mapping_ids": [
+    "MAP-FOMO3D-PUBLIC-CONTEXT",
+    "MAP-DICE2WIN-COMMIT-BLOCKHASH"
+  ],
+  "catalog_only_mapping_ids": [
+    "MAP-PANCAKESWAP-VRF-REFERENCE"
+  ],
+  "records": [
+    "fomo3d_long/record.json",
+    "dice2win_v5/record.json",
+    "pancakeswap_lottery_v2/record.json"
+  ],
+  "catalog": "final_project/main_direction/research/public_rule_catalog.csv",
+  "mapping": "final_project/main_direction/research/public_rule_mapping.csv",
+  "schema": "final_project/main_direction/research/rule_provenance.schema.json",
+  "collection_plan": "final_project/main_direction/research/public_rule_collection_plan.md",
+  "notes": "This manifest records public provenance. It is not evidence of a historical attack."
+}

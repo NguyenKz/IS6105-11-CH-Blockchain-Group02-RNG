@@ -1,0 +1,8 @@
+{
+  "input": "final_project/main_direction/data/derived/public_informed_synthetic/observations.jsonl",
+  "input_status": "PASS",
+  "observation_count": 2400,
+  "schema": "final_project/main_direction/research/schema/bsc_rng_mev_replay.schema.json",
+  "self_test": false,
+  "status": "PASS"
+}

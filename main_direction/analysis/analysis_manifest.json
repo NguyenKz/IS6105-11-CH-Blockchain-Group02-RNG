@@ -1,0 +1,45 @@
+{
+  "analysis": "STEP_11_PAIRED_REPLAY",
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 6105,
+  "dependency_versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3"
+  },
+  "input_hashes": {
+    "baseline_manifest": "f45de2222387ceb1b016087e7aed58ca21899196328197c4ef51194079cb39cf",
+    "baseline_observations": "1f5d3e23a878f263f90cce2d861a997e49b51ef88798edd4f00378a9de4ba009",
+    "public_invariants": "4fcc83184c860adf15dbceb977e6368af4e75f618040eeaf2f7556fa776c2cd0",
+    "public_manifest": "eaaefc162666da26caa2b256e5da82b2cff8c309012012cb447316b917bb090e",
+    "public_observations": "33448bb426f50437fb54ff059e381b6e0262d92debb4ae533d75439531bcb8f3"
+  },
+  "outputs": {
+    "figures": [
+      "reports/figures/01_dataset_coverage.png",
+      "reports/figures/02_capability_matrix.png",
+      "reports/figures/03_paired_delta_ci.png",
+      "reports/figures/04_net_profit_sensitivity.png",
+      "reports/figures/05_weak_vs_safe.png"
+    ],
+    "reports": [
+      "reports/results_by_rq.md",
+      "reports/robustness_checks.md"
+    ],
+    "tables": [
+      "reports/tables/coverage.csv",
+      "reports/tables/public_summary.csv",
+      "reports/tables/baseline_summary.csv",
+      "reports/tables/capability_uplift.csv",
+      "reports/tables/economic_sensitivity.csv",
+      "reports/tables/safe_reference.csv",
+      "reports/tables/baseline_comparison.csv"
+    ]
+  },
+  "python_version": "3.12.10",
+  "row_counts": {
+    "baseline_observations": 2400,
+    "public_invariants": 600,
+    "public_observations": 2400
+  }
+}
