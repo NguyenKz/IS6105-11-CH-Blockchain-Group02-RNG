@@ -1,27 +1,13 @@
----
-title: "Phân tích khả năng khai thác RNG on-chain yếu theo năng lực searcher và builder trên BNB Smart Chain"
-subtitle: "Báo cáo giữa kỳ cập nhật — kết quả verified public-informed synthetic replay"
-author: |
-  Nhóm 02 — OnChainRNG\\
-  Bùi Thái Hoàng (250104008), Trần Thảo Nguyên (250101049),\\
-  Nguyễn Duy Trọng Nhân (250104048), Nguyễn Phi Yến (250104059)\\
-  Môn: Công nghệ Blockchain, IS6105.11.CH\\
-  Giảng viên: Trần Hưng Nghiệp
-date: "09/2026 — 11/2026"
-lang: vi-VN
-geometry: margin=2.2cm
-fontsize: 10.5pt
-toc: true
-toc-depth: 2
-header-includes:
-  - \usepackage{booktabs}
-  - \usepackage{longtable}
-  - \usepackage{array}
-  - \usepackage{graphicx}
-  - \usepackage{float}
-  - \usepackage{xcolor}
-  - \usepackage{hyperref}
----
+# Phân tích khả năng khai thác RNG on-chain yếu theo năng lực searcher và builder trên BNB Smart Chain
+
+*Báo cáo giữa kỳ cập nhật — kết quả verified public-informed synthetic replay*
+
+**Nhóm 02 — OnChainRNG**  
+Bùi Thái Hoàng (250104008), Trần Thảo Nguyên (250101049),  
+Nguyễn Duy Trọng Nhân (250104048), Nguyễn Phi Yến (250104059)  
+Môn: Công nghệ Blockchain, IS6105.11.CH  
+Giảng viên: Trần Hưng Nghiệp  
+Thời gian: 09/2026 — 11/2026
 
 # Tóm tắt
 
@@ -218,20 +204,20 @@ Kết quả phân biệt hai điều thường bị trộn lẫn: capability có
 
 Các artifact chính:
 
-- `code/data/derived/public_informed_synthetic/observations.jsonl`
-- `code/data/manifests/public_informed_synthetic_manifest.json`
-- `code/data/derived/public_informed_synthetic/validation_output.json`
-- `code/scripts/replay/run_public_informed.py`
-- `code/scripts/replay/validate_result.py`
-- `code/scripts/replay/test_public_informed.py`
-- `code/analysis/step_11_analysis.py`
-- `code/analysis/step_11_results.ipynb`
-- `code/reports/results_by_rq.md`
-- `code/reports/tables/`
-- `code/reports/figures/`
-- `code/repro_check_public_informed_results.zip`
+- `main_direction/data/derived/public_informed_synthetic/observations.jsonl`
+- `main_direction/data/manifests/public_informed_synthetic_manifest.json`
+- `main_direction/data/derived/public_informed_synthetic/validation_output.json`
+- `main_direction/scripts/replay/run_public_informed.py`
+- `main_direction/scripts/replay/validate_result.py`
+- `main_direction/scripts/replay/test_public_informed.py`
+- `main_direction/analysis/step_11_analysis.py`
+- `main_direction/analysis/step_11_results.ipynb`
+- `main_direction/reports/results_by_rq.md`
+- `main_direction/reports/tables/`
+- `main_direction/reports/figures/`
+- `main_direction/repro_check_public_informed_results.zip`
 
-Lệnh validation từ `code/`:
+Lệnh validation từ `main_direction/`:
 
 ```bash
 source ../../venv/bin/activate

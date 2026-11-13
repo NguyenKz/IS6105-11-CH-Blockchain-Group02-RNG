@@ -12,6 +12,9 @@ personal working files, or the previous DOCX submission.
 
 - `Blockchain-Group02-RNG-Midterm2-verified-report.pdf` — final report.
 - `Blockchain-Group02-RNG-Midterm2-verified-report.md` — report source.
+- `Blockchain-Group02-RNG-Midterm2-verified-report.metadata.yaml` — PDF-only
+  Pandoc metadata; it is intentionally separate so GitHub does not render it
+  as a table.
 - `code/` — minimal code, fixtures, schema, analysis, reports,
   tables, figures, manifests, and verified replay logs.
 
@@ -61,6 +64,16 @@ python scripts/replay/validate_result.py \
 python scripts/replay/validate_result.py \
   --input data/derived/public_informed_synthetic/observations.jsonl \
   --schema research/bsc_rng_mev_replay.schema.json
+```
+
+To rebuild the PDF from the report source:
+
+```bash
+pandoc Blockchain-Group02-RNG-Midterm2-verified-report.md \
+  --metadata-file Blockchain-Group02-RNG-Midterm2-verified-report.metadata.yaml \
+  -o Blockchain-Group02-RNG-Midterm2-verified-report.pdf \
+  --pdf-engine=xelatex \
+  --resource-path=".:code"
 ```
 
 Running a fresh crawl or replay may require a local `PINAX_API_KEY`. Never

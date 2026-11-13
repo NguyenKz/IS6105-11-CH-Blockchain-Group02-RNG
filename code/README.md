@@ -28,5 +28,9 @@ python scripts/replay/validate_result.py \
   --schema research/bsc_rng_mev_replay.schema.json
 ```
 
+The PDF report is built from the repository root with the separate
+`Blockchain-Group02-RNG-Midterm2-verified-report.metadata.yaml` file. Keeping
+Pandoc metadata separate prevents GitHub from rendering it as a table.
+
 Fresh crawl/replay commands may require a local `PINAX_API_KEY`. Never commit
 `.env`, keys, credentials, private RPC URLs, or private order flow.
