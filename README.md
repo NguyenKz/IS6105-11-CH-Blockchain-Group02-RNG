@@ -1,57 +1,56 @@
-# IS6105.11.CH — Blockchain Group 02 RNG Replay
+# IS6105.11.CH — Replay RNG của Nhóm Blockchain 02
 
-Verified midterm research artifact for:
+Artifact nghiên cứu giữa kỳ đã được kiểm chứng cho đề tài:
 
 > Capability-Aware Analysis of Weak On-Chain RNG Exploitability on BNB Smart Chain
 
-This repository contains only the verified submission artifacts. It does not
-contain the original workspace, proposal templates, drafts, lecture notes,
-personal working files, or the previous DOCX submission.
+Repository này chỉ chứa các artifact nộp bài đã được kiểm chứng. Repository
+không chứa workspace gốc, template proposal, bản nháp, ghi chú bài giảng, file
+làm việc cá nhân hoặc bản DOCX nộp trước đây.
 
-## What is included
+## Nội dung repository
 
-- `Blockchain-Group02-RNG-Midterm2-verified-report.pdf` — final report.
-- `Blockchain-Group02-RNG-Midterm2-verified-report.md` — report source.
+- `Blockchain-Group02-RNG-Midterm2-verified-report.pdf` — báo cáo cuối.
+- `Blockchain-Group02-RNG-Midterm2-verified-report.md` — source của báo cáo.
 - `Blockchain-Group02-RNG-Midterm2-verified-report.metadata.yaml` — PDF-only
-  Pandoc metadata; it is intentionally separate so GitHub does not render it
-  as a table.
-- `code/` — minimal code, fixtures, schema, analysis, reports,
-  tables, figures, manifests, and verified replay logs.
+  metadata của Pandoc; file được tách riêng để GitHub không render metadata
+  thành bảng.
+- `code/` — code tối thiểu, fixture, schema, analysis, report, bảng, biểu đồ,
+  manifest và replay logs đã được kiểm chứng.
 
-The verified batch contains 100 BSC contexts, 2,400 observations, six
-scenarios, four cost models, and zero failed contexts. Schema validation passed.
-The results are controlled local replay results on synthetic adapters. They are
-not evidence that a historical BSC actor performed an attack, and they do not
-estimate BSC-wide prevalence or real-world profitability.
+Batch đã kiểm chứng gồm 100 BSC contexts, 2.400 observations, sáu scenario,
+bốn cost model và không có context thất bại. Schema validation đã pass. Kết
+quả là controlled local replay trên synthetic adapter. Đây không phải bằng
+chứng một actor lịch sử trên BSC đã tấn công, không ước lượng prevalence trên
+toàn BSC và không chứng minh profitability thực tế.
 
-The 1,000-context confirmatory holdout, participant robustness 2/5/10 runs,
-slide deck, and speaker script are not included because those artifacts were
-not present in the verified workspace.
+Confirmatory holdout 1.000 contexts, các run participant robustness 2/5/10,
+slide deck và speaker script không được đưa vào vì các artifact đó không có
+trong workspace đã kiểm chứng.
 
-## Step-by-step research plan
+## Kế hoạch nghiên cứu theo từng bước
 
-| Step | Topic | Document |
+| Step | Nội dung | Tài liệu |
 |---:|---|---|
-| 1 | Research map | [Step 1](code/step_1_research_map.md) |
-| 2 | Scope and claims | [Step 2](code/step_2_lock_scope_and_claims.md) |
-| 3 | Related work review | [Step 3](code/step_3_review_related_work.md) |
+| 1 | Bản đồ nghiên cứu | [Step 1](code/step_1_research_map.md) |
+| 2 | Phạm vi và claims | [Step 2](code/step_2_lock_scope_and_claims.md) |
+| 3 | Khảo sát related work | [Step 3](code/step_3_review_related_work.md) |
 | 4 | Threat model | [Step 4](code/step_4_define_threat_model.md) |
-| 5 | Experiment and dataset specification | [Step 5](code/step_5_specify_experiment.md) |
-| 6 | BSC block-context collection | [Step 6](code/step_6_crawl_bsc_contexts.md) |
+| 5 | Đặc tả experiment và dataset | [Step 5](code/step_5_specify_experiment.md) |
+| 6 | Thu thập block context BSC | [Step 6](code/step_6_crawl_bsc_contexts.md) |
 | 7 | Replay harness | [Step 7](code/step_7_build_replay_harness.md) |
 | 8 | Attack strategies | [Step 8](code/step_8_implement_attack_strategies.md) |
-| 9 | Pilot and go/no-go decision | [Step 9](code/step_9_run_pilot.md) |
+| 9 | Pilot và quyết định go/no-go | [Step 9](code/step_9_run_pilot.md) |
 | 10 | Public-informed synthetic evaluation | [Step 10](code/step_10_collect_full_dataset.md) |
-| 11 | Results analysis | [Step 11](code/step_11_analyze_results.md) |
-| 12 | Report and artifact release | [Step 12](code/step_12_write_report_and_release.md) |
+| 11 | Phân tích kết quả | [Step 11](code/step_11_analyze_results.md) |
+| 12 | Báo cáo và phát hành artifact | [Step 12](code/step_12_write_report_and_release.md) |
 
-The step files document the research plan and provenance of the workflow.
+Các file step mô tả research plan và provenance của workflow.
 
-## Reproduce and validate
+## Reproduce và validate
 
-The commands below run from `code/`. Install the project dependencies
-and Foundry/Anvil locally first, or adapt them to the Docker setup used by the
-original workspace.
+Các lệnh dưới đây được chạy từ `code/`. Hãy cài dependency của project và
+Foundry/Anvil local trước, hoặc điều chỉnh theo Docker setup của workspace gốc.
 
 ```bash
 cd code
@@ -64,7 +63,7 @@ python scripts/replay/validate_result.py \
   --schema research/bsc_rng_mev_replay.schema.json
 ```
 
-To rebuild the PDF from the report source:
+Để rebuild PDF từ report source:
 
 ```bash
 pandoc Blockchain-Group02-RNG-Midterm2-verified-report.md \
@@ -74,23 +73,23 @@ pandoc Blockchain-Group02-RNG-Midterm2-verified-report.md \
   --resource-path=".:code"
 ```
 
-Running a fresh crawl or replay may require a local `PINAX_API_KEY`. Never
-commit `.env`, API keys, private RPC URLs, credentials, or private order flow.
+Chạy crawl hoặc replay mới có thể cần `PINAX_API_KEY` local. Không commit
+`.env`, API key, private RPC URL, credential hoặc private order flow.
 
-## Evidence boundary
+## Ranh giới bằng chứng
 
-- `OBSERVED`: chain context or source evidence read by the data pipeline.
-- `REPLAYED`: local Foundry/Anvil execution.
-- `MODELED`: prize, bid/bribe, and opportunity-cost assumptions.
-- `DERIVED`: metrics calculated from replay output.
-- `HYPOTHESIS`: an unconfirmed research proposition.
+- `OBSERVED`: chain context hoặc source evidence được data pipeline đọc.
+- `REPLAYED`: thực thi local trên Foundry/Anvil.
+- `MODELED`: giả định về prize, bid/bribe và opportunity cost.
+- `DERIVED`: metric tính từ replay output.
+- `HYPOTHESIS`: proposition nghiên cứu chưa được xác nhận.
 
-`BUILDER_RECEIVED` is an experimental capability assumption, not observed
-private order flow. The Fomo3D-inspired and Dice2Win-inspired contracts are
-synthetic adapters; deployed application replay is not claimed.
+`BUILDER_RECEIVED` là capability assumption trong experiment, không phải
+private order flow quan sát được. Các contract Fomo3D-inspired và
+Dice2Win-inspired là synthetic adapter; không claim deployed application replay.
 
-## License and attribution
+## License và attribution
 
-This repository is a course research artifact by Blockchain Group 02. The
-included source references retain their original attribution. Public-chain
-data redistribution remains subject to the terms of its provider.
+Repository này là course research artifact của Nhóm Blockchain 02. Các source
+reference được giữ attribution gốc. Việc phân phối lại public-chain data vẫn
+phụ thuộc điều khoản của provider.

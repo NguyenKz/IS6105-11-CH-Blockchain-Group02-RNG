@@ -1,22 +1,22 @@
-# Verified replay code
+# Code replay đã được kiểm chứng
 
-This directory contains the reproducible code, research plan, fixtures, schema,
-analysis, reports, and verified logs for the midterm artifact.
+Thư mục này chứa code có thể tái lập, research plan, fixture, schema, analysis,
+report và logs đã được kiểm chứng cho artifact giữa kỳ.
 
 ## Research plan
 
-The ordered research plan is in `step_1_research_map.md` through
-`step_12_write_report_and_release.md`. The plan documents process and evidence
-boundaries; it does not turn unexecuted experiments into results.
+Research plan theo thứ tự nằm trong `step_1_research_map.md` đến
+`step_12_write_report_and_release.md`. Plan mô tả quy trình và ranh giới bằng
+chứng; plan không biến experiment chưa chạy thành kết quả.
 
-## Verified result
+## Kết quả đã kiểm chứng
 
-The completed batch is `data/derived/public_informed_synthetic/` with 100
-contexts and 2,400 observations. The manifest and schema validation output are
-under `data/manifests/` and the dataset directory. Results are controlled local
-replay on synthetic adapters, not historical attack evidence.
+Batch đã hoàn thành là `data/derived/public_informed_synthetic/`, gồm 100
+contexts và 2.400 observations. Manifest và schema validation output nằm trong
+`data/manifests/` và thư mục dataset. Kết quả là controlled local replay trên
+synthetic adapter, không phải bằng chứng historical attack.
 
-## Run validation
+## Chạy validation
 
 ```bash
 python scripts/replay/test_public_informed.py
@@ -28,9 +28,9 @@ python scripts/replay/validate_result.py \
   --schema research/bsc_rng_mev_replay.schema.json
 ```
 
-The PDF report is built from the repository root with the separate
-`Blockchain-Group02-RNG-Midterm2-verified-report.metadata.yaml` file. Keeping
-Pandoc metadata separate prevents GitHub from rendering it as a table.
+PDF report được build từ repository root bằng file riêng
+`Blockchain-Group02-RNG-Midterm2-verified-report.metadata.yaml`. Tách Pandoc
+metadata giúp GitHub không render metadata thành bảng.
 
-Fresh crawl/replay commands may require a local `PINAX_API_KEY`. Never commit
-`.env`, keys, credentials, private RPC URLs, or private order flow.
+Crawl/replay mới có thể cần `PINAX_API_KEY` local. Không commit `.env`, key,
+credential, private RPC URL hoặc private order flow.
